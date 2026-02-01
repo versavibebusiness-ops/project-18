@@ -10,7 +10,7 @@ const Home = () => {
         <div className="home-page">
             <Helmet>
                 <title>Versavibe - Practical Business Skills & Toolkits</title>
-                <meta name="description" content="Master practical business skills with Versavibe. Download templates, scripts, and guides to grow your business today. No fluff, just results." />
+                <meta name="description" content="Master foundational business skills with Versavibe. Practical, beginner-friendly masterclasses on sales scripts, onboarding, and outreach designed for results." />
                 <link rel="canonical" href="https://versavibe.com/" />
             </Helmet>
 
@@ -19,7 +19,7 @@ const Home = () => {
                 <div className="container">
                     <div className="hero-content fade-in">
                         <h1>Practical business skills for the real world.</h1>
-                        <p className="hero-subhead">No fluff, no hype. Just the tools and templates you need to grow your business today.</p>
+                        <p className="hero-subhead">Master foundational business skills through practical, beginner-friendly masterclasses designed for immediate results.</p>
                         <Link to="/store" className="btn btn-primary btn-lg">Browse Courses</Link>
                     </div>
                 </div>
