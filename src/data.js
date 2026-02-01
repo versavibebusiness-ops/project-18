@@ -3,7 +3,7 @@ export const products = [
         id: 'sales-call-scripts',
         title: 'Sales Call Script Mastery',
         description: 'This course provides a foundational library of sales call scripts, designed for beginners and small business owners. You will learn to navigate every stage of a sales conversation, from initial contact to closing the deal, with ready-to-use dialogue. The curriculum focuses on building confidence and adaptability, enabling you to customize scripts for your unique products and audience.',
-        price: 3999,
+        price: 249,
         features: [
             'Foundational Script Library',
             'Beginner-Friendly Frameworks',
@@ -19,38 +19,38 @@ export const products = [
     },
     {
         id: 'onboarding-email-kit',
-        title: 'Customer Onboarding Email Sequence Kit',
-        description: 'Turn new customers into raving fans with a professional onboarding sequence.',
-        price: 2999,
+        title: 'Customer Onboarding Email Sequence Masterclass',
+        description: "This course is designed for small business owners and service teams who want to build stronger customer relationships from the start. We'll guide you through crafting a simple yet effective onboarding email sequence, starting with the core principles and moving to practical, ready-to-use email examples for welcoming new clients, guiding them, and encouraging continued engagement. The course concludes with tips for personalizing your messages to perfectly fit your brand.",
+        price: 199,
         features: [
-            '5-Email Onboarding Sequence',
-            'Setup Guide',
-            'Customization Templates',
-            'Customer Retention Checklist'
+            'Core Onboarding Principles',
+            'Ready-to-use Email Examples',
+            'Engagement Strategies',
+            'Personalization Framework'
         ],
         details: {
-            problem: 'Ghosting clients or endless "what next?" questions after purchase?',
-            solution: 'Automate your customer welcome experience with a professional email sequence that sets expectations and builds trust.',
-            forWho: 'Course creators, SaaS founders, and service providers.',
-            outcome: 'Reduce support tickets and increase customer satisfaction immediately after purchase.'
+            problem: "Small business owners and service teams often lack a simple yet effective way to welcome and guide new clients, missing the opportunity to build strong relationships early on.",
+            solution: "We'll guide you through crafting an onboarding sequence with core principles and practical, ready-to-use email examples for welcoming, guiding, and engaging new clients.",
+            forWho: 'Small business owners and service teams.',
+            outcome: 'Build stronger customer relationships from the start with a personalized and professional onboarding experience.'
         }
     },
     {
         id: 'influencer-outreach-templates',
-        title: 'Influencer Outreach Email Templates',
-        description: 'Get replies from top influencers with templates that actually work.',
-        price: 1999,
+        title: 'Influencer Email Outreach Mastery',
+        description: 'This course equips small brands, marketers, and social media managers with the skills to initiate and manage professional email conversations with influencers. Starting from understanding outreach fundamentals and common pitfalls, you will learn to craft compelling initial outreach, collaboration pitch, follow-up, thank you, and deal-closing emails. The course concludes with essential customization tips to tailor these templates to your unique brand voice and offers.',
+        price: 149,
         features: [
-            'Cold Outreach Templates',
-            'Follow-up Sequence',
-            'Collaboration Proposal Scripts',
-            'Pitch Deck Template'
+            'Outreach Fundamentals',
+            'Professional Pitch Scripts',
+            'Follow-up Strategies',
+            'Customization Toolkit'
         ],
         details: {
-            problem: 'Sending hundreds of emails to influencers and getting zero replies?',
-            solution: 'Stop being ignored. These templates are designed to cut through the noise and get a "yes" from busy influencers.',
-            forWho: 'Brand owners, marketers, and content creators looking for partnerships.',
-            outcome: 'Start building valuable relationships and grow your brand visibility.'
+            problem: 'Small brands and marketers often struggle to initiate and manage professional conversations with influencers, resulting in ignored emails and missed collaborations.',
+            solution: 'This course teaches you to craft compelling initial outreach, collaboration pitch, follow-up, thank you, and deal-closing emails, with essential customization tips.',
+            forWho: 'Small brands, marketers, and social media managers.',
+            outcome: 'Equip yourself with the skills to effectively manage professional influencer outreach from start to finish.'
         }
     }
 ];
