@@ -5,6 +5,7 @@ import './Navbar.css';
 const Navbar = () => {
   const location = useLocation();
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0, opacity: 0 });
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navLinksRef = useRef([]);
 
   useEffect(() => {
@@ -20,17 +21,31 @@ const Navbar = () => {
         opacity: 1
       });
     } else {
-      // Hide if no match (shouldn't happen with current routes, but good for safety)
       setIndicatorStyle(prev => ({ ...prev, opacity: 0 }));
     }
+    // Close menu on navigation
+    setIsMenuOpen(false);
   }, [location.pathname]);
 
   return (
     <div className="navbar-container">
-      <nav className="navbar">
-        <Link to="/" className="navbar-logo">Versavibe</Link>
-        <div className="navbar-links">
-          {/* Sliding Indicator */}
+      <nav className={`navbar ${isMenuOpen ? 'menu-open' : ''}`}>
+        <div className="navbar-main">
+          <Link to="/" className="navbar-logo">Versavibe</Link>
+
+          <button
+            className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <div className={`navbar-links ${isMenuOpen ? 'show' : ''}`}>
+          {/* Sliding Indicator (Only visible on desktop/large screens) */}
           <div
             className="nav-indicator"
             style={{

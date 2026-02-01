@@ -37,11 +37,12 @@
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
+  /* Responsive Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 4rem;
+  --spacing-lg: clamp(1.5rem, 5vw, 2.5rem);
+  --spacing-xl: clamp(3rem, 10vw, 6rem);
 
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
@@ -59,6 +60,16 @@
   padding: 0;
 }
 
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--color-bg);
@@ -70,13 +81,14 @@ body {
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 button {
@@ -99,9 +111,23 @@ h6 {
   letter-spacing: -0.025em;
 }
 
+/* Fluid Typography */
+h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
 p {
   margin-bottom: var(--spacing-sm);
   color: var(--color-text-muted);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
 }
 
 /* Utilities */
@@ -109,7 +135,7 @@ p {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--spacing-sm);
+  padding: 0 var(--spacing-xs);
 }
 
 /* Button & interactive improvements */
@@ -125,6 +151,7 @@ p {
   position: relative;
   overflow: hidden;
   letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 /* Liquid Sheen Animation */
@@ -153,17 +180,12 @@ p {
   background: var(--gradient-primary);
   color: white;
   box-shadow: 0 4px 15px -3px rgba(139, 92, 246, 0.4);
-  /* Glow effect */
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px -3px rgba(139, 92, 246, 0.5);
   filter: brightness(1.1);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
 }
 
 .btn-accent {
@@ -175,7 +197,6 @@ p {
 .btn-accent:hover {
   background-color: var(--color-border);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
 }
 
 .btn-outline {
@@ -212,7 +233,7 @@ p {
 
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: var(--spacing-lg);
 }
 
@@ -231,18 +252,6 @@ p {
   animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.delay-100 {
-  animation-delay: 0.1s;
-}
-
-.delay-200 {
-  animation-delay: 0.2s;
-}
-
-.delay-300 {
-  animation-delay: 0.3s;
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -256,19 +265,24 @@ p {
 }
 
 @keyframes float {
-  0% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
 
   50% {
     transform: translateY(-10px);
   }
-
-  100% {
-    transform: translateY(0px);
-  }
 }
 
 .hover-float:hover {
   animation: float 3s ease-in-out infinite;
+}
+
+@media (max-width: 480px) {
+  .btn {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+  }
 }

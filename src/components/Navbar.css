@@ -7,28 +7,27 @@
     width: 100%;
     z-index: 1000;
     pointer-events: none;
-    /* Let clicks pass through outside the pill */
+    padding: 0 1rem;
 }
 
 .navbar {
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50px;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
     gap: 2rem;
     box-shadow:
-        0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 10px 30px -5px rgba(0, 0, 0, 0.3),
         0 0 0 1px rgba(255, 255, 255, 0.05);
     pointer-events: auto;
-    /* Re-enable pointer events for the pill */
     animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    max-width: 90%;
+    max-width: 1000px;
     width: auto;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes slideDown {
@@ -43,16 +42,38 @@
     }
 }
 
+.navbar-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .navbar-logo {
-    font-weight: 800;
-    font-size: 1.25rem;
-    color: #fff;
-    text-decoration: none;
+    font-weight: 900;
+    font-size: 1.4rem;
     background: var(--gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-right: 1rem;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: all 0.3s ease;
+    border-radius: 2px;
 }
 
 .navbar-links {
@@ -66,77 +87,102 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     pointer-events: none;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 0;
-    box-shadow: 0 0 10px rgba(167, 139, 250, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-link {
     color: var(--color-text-muted);
-    font-weight: 500;
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    z-index: 1;
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: #fff;
-    /* Background handled by sliding indicator */
-    position: relative;
-    z-index: 1;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -150%;
-    width: 150%;
-    height: 100%;
-    background: linear-gradient(90deg,
-            transparent 0%,
-            rgba(255, 255, 255, 0.2) 20%,
-            rgba(255, 255, 255, 0.4) 50%,
-            transparent 100%);
-    transform: skewX(-20deg);
-    transition: none;
-}
-
-.nav-link:hover::after {
-    left: 150%;
-    transition: left 0.6s ease-in-out;
 }
 
 .navbar-btn {
     background: var(--gradient-primary);
     color: white;
-    padding: 0.5rem 1.25rem;
-    border-radius: 20px;
-    font-weight: 600;
+    padding: 0.6rem 1.4rem;
+    border-radius: 25px;
+    font-weight: 700;
     font-size: 0.9rem;
-    border: none;
-    cursor: pointer;
-    margin-left: 0.5rem;
     transition: all 0.3s ease;
-    text-decoration: none;
-    box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 }
 
-.navbar-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
-}
+/* Response Breakpoint */
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%;
+        border-radius: 30px;
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        gap: 0;
+    }
 
-/* Hide default container padding since we handle it in flex */
-.navbar-content {
-    display: contents;
+    .navbar.menu-open {
+        border-radius: 24px;
+        background: rgba(15, 23, 42, 0.95);
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Hamburger Animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .navbar-links {
+        width: 100%;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, margin-top 0.4s ease;
+        gap: 1rem;
+        padding-bottom: 0;
+    }
+
+    .navbar-links.show {
+        max-height: 400px;
+        margin-top: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .nav-indicator {
+        display: none;
+        /* Hide indicator on mobile as it's vertical now */
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .navbar-btn {
+        width: 100%;
+        text-align: center;
+    }
 }

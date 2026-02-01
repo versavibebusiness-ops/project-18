@@ -58,6 +58,11 @@
     color: var(--color-text-muted);
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .product-price {
@@ -80,4 +85,10 @@
 .product-btn {
     flex: 1;
     font-size: 0.95rem;
+}
+
+@media (max-width: 480px) {
+    .product-card-footer {
+        flex-direction: column;
+    }
 }

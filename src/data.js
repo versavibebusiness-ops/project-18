@@ -1,20 +1,20 @@
 export const products = [
     {
         id: 'sales-call-scripts',
-        title: 'Sales Call Script Library',
-        description: 'Close more deals with confidence using our battle-tested sales scripts.',
+        title: 'Sales Call Script Mastery',
+        description: 'This course provides a foundational library of sales call scripts, designed for beginners and small business owners. You will learn to navigate every stage of a sales conversation, from initial contact to closing the deal, with ready-to-use dialogue. The curriculum focuses on building confidence and adaptability, enabling you to customize scripts for your unique products and audience.',
         price: 3999,
         features: [
-            '3 Proven Sales Call Scripts',
-            'Objection Handling Cheatsheet',
-            'Detailed Guide included',
+            'Foundational Script Library',
+            'Beginner-Friendly Frameworks',
+            'Customizable Templates',
             'Final Knowledge Check'
         ],
         details: {
-            problem: 'Struggling to close deals or not knowing what to say when a prospect says "no"?',
-            solution: 'This library gives you exact words to say for every stage of the sales call, from opening to closing and handling objections.',
-            forWho: 'Freelancers, consultants, and sales professionals who want to increase their close rate.',
-            outcome: 'You will feel confident on every call and turn more leads into paying clients.'
+            problem: 'Many beginners and small business owners struggle with what to say during sales calls, leading to lost opportunities and low confidence.',
+            solution: 'Our Sales Call Script Mastery curriculum focuses on building confidence and adaptability, enabling you to customize scripts for your unique products and audience.',
+            forWho: 'Beginners and small business owners who want professional, ready-to-use dialogue for their sales conversations.',
+            outcome: 'You will learn to navigate every stage of a sales conversation with ease, from initial contact to closing the deal.'
         }
     },
     {
