@@ -15,7 +15,8 @@ export const products = [
             solution: 'Our Sales Call Script Mastery curriculum focuses on building confidence and adaptability, enabling you to customize scripts for your unique products and audience.',
             forWho: 'Beginners and small business owners who want professional, ready-to-use dialogue for their sales conversations.',
             outcome: 'You will learn to navigate every stage of a sales conversation with ease, from initial contact to closing the deal.'
-        }
+        },
+        checkoutUrl: 'https://tally.so/r/0QOoaj?product_id=P1&product_name=Sales%20Call%20Script%20Mastery&expected_amount=249&note_prefix=ORDER-P1-'
     },
     {
         id: 'onboarding-email-kit',
@@ -33,7 +34,8 @@ export const products = [
             solution: "We'll guide you through crafting an onboarding sequence with core principles and practical, ready-to-use email examples for welcoming, guiding, and engaging new clients.",
             forWho: 'Small business owners and service teams.',
             outcome: 'Build stronger customer relationships from the start with a personalized and professional onboarding experience.'
-        }
+        },
+        checkoutUrl: 'https://tally.so/r/0QOoaj?product_id=P2&product_name=Customer%20Onboarding%20Email%20Sequence%20Masterclass&expected_amount=199&note_prefix=ORDER-P2-'
     },
     {
         id: 'influencer-outreach-templates',
@@ -51,6 +53,7 @@ export const products = [
             solution: 'This course teaches you to craft compelling initial outreach, collaboration pitch, follow-up, thank you, and deal-closing emails, with essential customization tips.',
             forWho: 'Small brands, marketers, and social media managers.',
             outcome: 'Equip yourself with the skills to effectively manage professional influencer outreach from start to finish.'
-        }
+        },
+        checkoutUrl: 'https://tally.so/r/0QOoaj?product_id=P3&product_name=Influencer%20Email%20Outreach%20Mastery&expected_amount=149&note_prefix=ORDER-P3-'
     }
 ];
