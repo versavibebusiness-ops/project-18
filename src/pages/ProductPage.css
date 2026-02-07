@@ -131,8 +131,7 @@
     flex-shrink: 0;
 }
 
-.sidebar-cta .btn,
-.sidebar-cta .buy-now-button {
+.sidebar-cta .btn {
     width: 100%;
 }
 

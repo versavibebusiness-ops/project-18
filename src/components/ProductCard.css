@@ -82,8 +82,7 @@
     gap: 1rem;
 }
 
-.product-btn,
-.buy-now-button {
+.product-btn {
     flex: 1;
     font-size: 0.95rem;
 }

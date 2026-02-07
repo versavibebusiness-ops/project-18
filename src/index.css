@@ -139,8 +139,7 @@ p {
 }
 
 /* Button & interactive improvements */
-.btn,
-.buy-now-button {
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -177,15 +176,13 @@ p {
   transition: left 0.75s ease-in-out;
 }
 
-.btn-primary,
-.buy-now-button {
+.btn-primary {
   background: var(--gradient-primary);
   color: white;
   box-shadow: 0 4px 15px -3px rgba(139, 92, 246, 0.4);
 }
 
-.btn-primary:hover,
-.buy-now-button:hover {
+.btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px -3px rgba(139, 92, 246, 0.5);
   filter: brightness(1.1);
@@ -285,8 +282,7 @@ p {
 
 @media (max-width: 480px) {
 
-  .btn,
-  .buy-now-button {
+  .btn {
     width: 100%;
     padding: 0.75rem 1.25rem;
   }
