@@ -85,7 +85,9 @@ const ProductPage = () => {
                                 ))}
                             </ul>
                             <div className="sidebar-cta">
-                                <BuyNowButton checkoutUrl={product.checkoutUrl} className="btn-full" />
+                                <BuyNowButton checkoutUrl={product.checkoutUrl} className="btn-full">
+                                    Buy Now - ₹{product.price}
+                                </BuyNowButton>
                                 <p className="guarantee-text">Secure payment. 30-day access guarantees.</p>
                             </div>
                         </div>

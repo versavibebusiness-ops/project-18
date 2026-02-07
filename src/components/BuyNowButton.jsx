@@ -1,8 +1,9 @@
 import React from 'react';
 
 const BuyNowButton = ({ checkoutUrl, className, children, ...props }) => {
-    const defaultClasses = "btn btn-primary";
-    const combinedClasses = className ? `${defaultClasses} ${className}` : defaultClasses;
+    // Explicitly define the base classes to ensure they are always present
+    const baseClasses = "btn btn-primary";
+    const combinedClasses = className ? `${baseClasses} ${className}` : baseClasses;
 
     if (checkoutUrl) {
         return (
