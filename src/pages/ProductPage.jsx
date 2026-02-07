@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { products } from '../data';
+import BuyNowButton from '../components/BuyNowButton';
 import './ProductPage.css';
 
 const ProductPage = () => {
@@ -43,7 +44,7 @@ const ProductPage = () => {
                                 <span className="product-price-lg">₹{product.price}</span>
                                 <span className="product-badge">Instant Access</span>
                             </div>
-                            <a href={product.checkoutUrl} className="btn btn-primary btn-lg">Buy Now</a>
+                            <BuyNowButton checkoutUrl={product.checkoutUrl} className="btn-lg" />
                         </div>
                     </div>
                 </div>
@@ -84,7 +85,7 @@ const ProductPage = () => {
                                 ))}
                             </ul>
                             <div className="sidebar-cta">
-                                <a href={product.checkoutUrl} className="btn btn-primary btn-full">Buy Now</a>
+                                <BuyNowButton checkoutUrl={product.checkoutUrl} className="btn-full" />
                                 <p className="guarantee-text">Secure payment. 30-day access guarantees.</p>
                             </div>
                         </div>

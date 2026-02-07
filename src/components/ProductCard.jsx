@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import BuyNowButton from './BuyNowButton';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
@@ -12,7 +13,7 @@ const ProductCard = ({ product }) => {
             </div>
             <div className="product-card-footer">
                 <Link to={`/product/${product.id}`} className="btn btn-outline product-btn">View Details</Link>
-                <a href={product.checkoutUrl} className="btn btn-primary product-btn">Buy Now</a>
+                <BuyNowButton checkoutUrl={product.checkoutUrl} className="product-btn" />
             </div>
         </div>
     );
