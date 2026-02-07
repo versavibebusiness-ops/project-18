@@ -1,15 +1,19 @@
 import React from 'react';
 
 const BuyNowButton = ({ checkoutUrl, className, children, ...props }) => {
-    // Explicitly define the base classes to ensure they are always present
-    const baseClasses = "btn btn-primary";
-    const combinedClasses = className ? `${baseClasses} ${className}` : baseClasses;
+    console.log('BuyNowButton rendered with checkoutUrl:', checkoutUrl);
 
-    if (checkoutUrl) {
+    // Ensure we have a clean string and absolute base classes
+    const baseClasses = "btn btn-primary";
+    const combinedClasses = `${baseClasses} ${className || ''}`.trim();
+
+    if (checkoutUrl && typeof checkoutUrl === 'string') {
         return (
             <a
                 href={checkoutUrl}
                 className={combinedClasses}
+                style={{ cursor: 'pointer', pointerEvents: 'auto' }}
+                onClick={() => console.log('BuyNowButton clicked, navigating to:', checkoutUrl)}
                 {...props}
             >
                 {children || 'Buy Now'}
@@ -21,9 +25,11 @@ const BuyNowButton = ({ checkoutUrl, className, children, ...props }) => {
         <button
             type="button"
             className={combinedClasses}
+            disabled
+            style={{ opacity: 0.5, cursor: 'not-allowed' }}
             {...props}
         >
-            {children || 'Buy Now'}
+            {children || 'Link Missing'}
         </button>
     );
 };

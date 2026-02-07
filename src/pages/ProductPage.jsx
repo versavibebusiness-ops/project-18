@@ -9,6 +9,8 @@ const ProductPage = () => {
     const { id } = useParams();
     const product = products.find(p => p.id === id);
 
+    console.log('ProductPage loaded for ID:', id, 'Product found:', product);
+
     useEffect(() => {
         if (product) {
             window.scrollTo(0, 0);
