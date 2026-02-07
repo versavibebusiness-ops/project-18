@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
             </div>
             <div className="product-card-footer">
                 <Link to={`/product/${product.id}`} className="btn btn-outline product-btn">View Details</Link>
-                <a href={product.checkoutUrl} className="btn btn-primary product-btn">Buy Now</a>
+                <a href={product.checkoutUrl} className="buy-now-button">Buy Now</a>
             </div>
         </div>
     );
